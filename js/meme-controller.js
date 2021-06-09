@@ -4,13 +4,14 @@ var gCanvas;
 var gCtx;
 var gCurrMeme;
 var gImg ;
-function init() {
+function initMeme(idX) {
 
     gCanvas = document.getElementById('my-canvas')
     gCtx = gCanvas.getContext('2d');
    
     renderFeachures(); 
-    gImg = {id: 1, url: 'img/3.jpg', keywords: ['happy']};
+    gImg = getImgById(idX);
+    console.log(gImg);
 
     createMeme(gImg.id);
     gCurrMeme=getMeme();
@@ -19,6 +20,7 @@ function init() {
     //TODO resize by the curr picture
     // resizeCanvas(250,450);
     drawImg(gImg.url);
+    addListeners();
 }
 function renderFeachures() {
     var strHtml = '';
@@ -26,16 +28,20 @@ function renderFeachures() {
         strHtml += `<div class="emoji-feachure" onclick="onAddFeachure('${emoji}')">${emoji}</div>`
     })
     var elFeachure=document.querySelector('.feachure');
-    elFeachure.innerHTML=strHtml
+    elFeachure.innerHTML=strHtml;
+  
 
 }
-function toggleMenu() {
-    var elBtn = document.querySelector('.card-menu-btn');
-    var elClose = document.querySelector('.close-menu-btn');
-    document.body.classList.toggle('menu-open');
-    elBtn.classList.toggle('hide');
-    elClose.classList.toggle('hide');
-}
+  function addListeners() {
+      
+        gCanvas.addEventListener('mousedown', handleMouseDown)
+        gCanvas.addEventListener('mouseup', handleMouseUp)
+        gCanvas.addEventListener('touchstart', handleMouseDown)
+        gCanvas.addEventListener('touchend', handleMouseUp)
+        gCanvas.addEventListener('mousemove', handleMouseMove);
+        gCanvas.addEventListener('touchmove', handleMouseMove);
+    }
+
 function changeText(text){
     gCurrMeme.lines[gCurrMeme.selectedLineIdx].txt=text
     clearCanvas();
@@ -86,5 +92,9 @@ function onAddFeachure(emoji){
 }
 function onChangeFontFamily(font){
     changeFontFamily(font);
+    clearCanvas();
+}
+function onchangePos(pos){
+    changePos(pos);
     clearCanvas();
 }

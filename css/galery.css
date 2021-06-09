@@ -1,0 +1,28 @@
+.galery-img{
+    /* height: 100%; */
+    max-width:300px;
+    object-fit: contain;
+    border-radius: 20px;
+    vertical-align: middle;
+}
+.img-container{
+    overflow:auto;
+    display:inline-block; 
+    
+
+}
+.galery-container{
+    max-width: 1000px;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+    height: 100vw;
+	 width: 100%; 
+    /* align-items: stretch; */
+    gap:10px;
+    margin: 20px;
+
+    justify-content: flex-start;
+    /* align-items: stretch; */
+ 
+}
