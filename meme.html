@@ -44,11 +44,11 @@
                 <button class="action-btn switch-lines-btn" onclick="onChangeLine()"><img src="img/ICONS/up-and-down-opposite-double-arrows-side-by-side.png" alt="" srcset="" class="action-icon"></button>
                </div> 
             </div>
-            <select onchange="setShape(this.value)" class="font-family-select">
-                    <option value="triangle">Triangle</option>
-                    <option value="line">line</option>
-                    <option value="rect">rect</option>
-                    <option value="circle">circle</option>
+            <select onchange="onChangeFontFamily(this.value)" class="font-family-select">
+                    <option value="lato-bold">Lato-Bold</option>
+                    <option value="lato-regular">Lato-Regular</option>
+                    <option value="eurofurence">eurofurence</option>
+                 
             </select>
            
             <div class="text-style">
@@ -57,8 +57,14 @@
                 <button class="action-btn align-left-btn" onclick="onChangeAlign('left')"><img src="img/ICONS/align-to-left.png" alt="" srcset="" class="action-icon"></button>
                 <button class="action-btn align-center-btn" onclick="onChangeAlign('center')"><img src="img/ICONS/center-text-alignment.png" alt="" srcset="" class="action-icon"></button>
                 <button class="action-btn align-right-btn" onclick="onChangeAlign('right')"><img src="img/ICONS/align-to-right.png" alt="" srcset="" class="action-icon"></button><div>|</div>
-                <button class="action-btn font-color-btn"><img src="img/ICONS/paint-board-and-brush.png" alt="" srcset="" class="action-icon"></button>
-                <button class="action-btn strok-color-btn"><img src="img/ICONS/text stroke.png" alt="" srcset="" class="action-icon"></button>
+                <button type="color" class="action-btn font-color-btn">
+                    <img src="img/ICONS/paint-board-and-brush.png" alt="" srcset="" class="action-icon">
+                     <input type="color" value="#0000" name="" id="" oninput="onChangeFontColor(this.value)">
+                    </button>
+                <button class="action-btn strok-color-btn">
+                    <img src="img/ICONS/text stroke.png" alt="" srcset="" class="action-icon"> 
+                     <input type="color" value="#0000" name="" id="" oninput="onChangeStrokColor(this.value)" >
+                    </button>
             </div>
            
             <input type="text" name="" id="" placeholder="enter text" value="" class="input-text" oninput="changeText(this.value)">
@@ -76,9 +82,8 @@
         </div>
     </main>
     <footer class="footer"></footer>
-
-
-
+    
+    <script src="js/canvas-service.js"></script>
     <script src="js/meme-service.js"></script>
     <script src="js/meme-controller.js"></script>
     <script src="js/upload-service.js"></script>

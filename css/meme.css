@@ -1,6 +1,22 @@
 *{
     box-sizing: border-box;
 }
+  /*fonts*/
+  @font-face {
+    font-family: lato-bold;
+    src: url(../fonts/lato/Lato-Bold.ttf);
+  }
+  
+  @font-face {
+    font-family: lato-regular;
+    src: url(../fonts/lato/Lato-Regular.ttf);
+  }
+  
+  @font-face {
+    font-family: eurofurence;
+    src: url(../fonts/eurofurence/eurof55.ttf);
+  }
+
 .main-header {
     height: 80px;
     background-color: rgb(255, 255, 255);
@@ -161,6 +177,9 @@
     padding: 15px;
     border: transparent 1px solid;
     border-bottom: black 1px solid;
+}
+.font-color-btn,.strok-color-btn{
+    display: flex;
 }
 .feachure{
     display: flex;
