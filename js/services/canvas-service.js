@@ -1,10 +1,13 @@
-const gTouchEvs = ['touchstart', 'touchmove', 'touchend']
+'use strict'
+const gTouchEvs = ['touchstart', 'touchmove', 'touchend'];
+var gLineToDrop;
 function resizeCanvas(height, width) {
 
     // Note: changing the canvas dimension this way clears the canvas
     gCanvas.width = width
     gCanvas.height = height
 }
+
 function downloadCanvas(elLink) {
     const data = gCanvas.toDataURL()
     console.log('DATA', data);
@@ -17,6 +20,7 @@ function clearCanvas() {
     renderPage();
     drawImg(gImg.url)
 }
+
 function drawText() {
     gCtx.lineWidth = 1;
     gCurrMeme.lines.forEach(line => {
@@ -37,6 +41,7 @@ function drawText() {
     })
 
 }
+
 function drawImg(src) {
     var img = new Image()
     img.src = src;
@@ -47,6 +52,7 @@ function drawImg(src) {
         drawRect(15, line.pos.y - 40, gCanvas.width - 30, line.size + 20)
     }
 }
+
 function drawRect(x, y, sizeX, sizeY) {
     gCtx.beginPath()
     gCtx.rect(x, y, sizeX, sizeY);
@@ -57,7 +63,7 @@ function drawRect(x, y, sizeX, sizeY) {
     gCtx.stroke()
 }
 
-var gLineToDrop;
+
 function handleMouseDown(e) {
     e.preventDefault();
     startX = parseInt(e.offsetX);
@@ -81,13 +87,13 @@ function handleMouseDown(e) {
 
 }
 
-// test if x,y is inside the bounding box of texts[textIndex]
 function textHittest(x, y, line) {
 
     return (x >= line.pos.x - gCtx.measureText(line.txt).width &&
         x <= line.pos.x + gCtx.measureText(line.txt).width &&
         y <= line.pos.y && y > line.pos.y - line.size);
 }
+
 function handleMouseMove(e) {
     if (!gLineToDrop) { return; }
     e.preventDefault();
@@ -105,10 +111,12 @@ function handleMouseMove(e) {
     gLineToDrop.pos.y += dy;
     clearCanvas();
 }
+
 function handleMouseUp(e) {
     e.preventDefault();
     gLineToDrop = null;
 }
+
 function getEvPos(ev) {
     var pos = {
         x: ev.offsetX,

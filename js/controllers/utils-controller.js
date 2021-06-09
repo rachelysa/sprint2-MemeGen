@@ -1,4 +1,4 @@
-
+'use strict'
 
 function toggleMenu() {
     var elBtn = document.querySelector('.card-menu-btn');

@@ -1,4 +1,4 @@
-
+'use strict'
 // on submit call to this function
 function uploadImg(elForm, ev) {
     ev.preventDefault();

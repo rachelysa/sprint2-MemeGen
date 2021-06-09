@@ -8,10 +8,12 @@ position: absolute;
     pointer-events: none;
     transition: 1s;
 }
+
 .show{
     opacity: 1;
     pointer-events: unset;
 }
+
 .back{
     position: absolute;
     width: 200px;
@@ -21,6 +23,7 @@ position: absolute;
     background-color: transparent;
     font-size: 16px;
     color: coral;
+    /* background-color: white; */
     left: 15px;
     font-weight: bold;
     border: transparent 1px solid;
@@ -28,6 +31,7 @@ position: absolute;
     border-radius: 10px;
     cursor: pointer;
 }
+
 .canvas-container{
 
     margin: 0 auto;
@@ -35,6 +39,7 @@ position: absolute;
 
     border: 1px solid rgb(0, 0, 0);
 }
+
 .canvas-options{
      margin: 0 10%;
      display: flex;
@@ -50,10 +55,12 @@ position: absolute;
     margin-bottom: 10px;
 
 }
+
 .edit-text{
     justify-self: end;
     flex-basis: 50%;
 }
+
 .action{
    flex-basis: 50%;
     display: flex;
@@ -61,11 +68,13 @@ position: absolute;
     gap: 10px;
 
 }
+
 .text-count{
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .text-style{
     display: flex;
     justify-content: center;
@@ -74,6 +83,7 @@ position: absolute;
     margin-bottom: 10px;
     flex-wrap: wrap;
 }
+
 .font-family-select{
     display: block;
     width: 100%;
@@ -90,11 +100,13 @@ position: absolute;
     border: transparent 1px solid;
 
 }
+
 .action-icon{
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
+
 .input-text{
     display: block;
     width: 100%;
@@ -104,13 +116,16 @@ position: absolute;
     border: transparent 1px solid;
     border-bottom: black 1px solid;
 }
+
 .font-color{
     width: 20px;
 }
+
 .font-color-btn,.strok-color-btn{
     display: flex;
   
 }
+
 .feachure{
     display: flex;
     flex-wrap: wrap;
@@ -118,10 +133,12 @@ position: absolute;
     margin-bottom: 20px;
     justify-content: center;
 }
+
 .emoji-feachure{
 
     font-size: 40px;
 }
+
 .save-btn{
     display: block;
     width: 100%;
@@ -134,6 +151,7 @@ position: absolute;
     border: transparent 1px solid;
     border-radius: 10px;
 }
+
 .save-btn a{
     display: block;
     font-size: 16px;
@@ -142,6 +160,7 @@ position: absolute;
     text-decoration: none;
     width: 100%;
 }
+
 @media (min-width:1065px) {
 
     .main-meme{
