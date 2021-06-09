@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meme generator</title>
+    <link rel="stylesheet" href="css/meme.css">
+</head>
+
+<body onload="init()">
+
+        <header class="main-header">
+            <div class="header-container main-layout flex space-between align-center">
+                <div class="logo">Blogin<span class="logo-dot">.</span></div>
+                 <button class="card-menu-btn" onclick="toggleMenu()">www</button>
+                 <!-- <button class="card-menu-btn"><span class="material-icons">menu</span></button> -->
+                <div class="nav-links">
+                    <button class="close-menu-btn hide" onclick="toggleMenu()">vvvv</button>
+                    <ul class="main-nav clean-list flex align-center">
+                        
+                        <li><a href="#" class="main-link">Galery</a> </li>
+                        <li><a href="#" class="main-link" >Memes</a></li>
+                        <li><a href="#" class="main-link" >About</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+    <main class="main-meme">
+        <div class="canvas-container">
+            <canvas id="my-canvas" height="450" width="450"></canvas>
+        </div>
+        <div class="canvas-options">
+           
+            <div class="text-actions">
+                <div class="edit-text">Edit Text Line</div>
+                <div class="action">
+                <div class="text-count"><span>1</span>/ <span>2</span></div>
+                <button class="action-btn add-text-btn" onclick="onAddLine()"><img src="img/ICONS/add.png" alt="" srcset="" class="action-icon" ></button>
+                <button class="action-btn delete-text-btn" onclick="onDeleteLine()"><img src="img/ICONS/trash.png" alt="" srcset="" class="action-icon"></button>
+                <button class="action-btn switch-lines-btn" onclick="onChangeLine()"><img src="img/ICONS/up-and-down-opposite-double-arrows-side-by-side.png" alt="" srcset="" class="action-icon"></button>
+               </div> 
+            </div>
+            <select onchange="setShape(this.value)" class="font-family-select">
+                    <option value="triangle">Triangle</option>
+                    <option value="line">line</option>
+                    <option value="rect">rect</option>
+                    <option value="circle">circle</option>
+            </select>
+           
+            <div class="text-style">
+                <button class="action-btn big-text-btn" onclick="onChangFontSize(1)"><img src="img/ICONS/increase font - icon.png" alt="" srcset="" class="action-icon"></button>
+                <button class="action-btn small-text-btn" onclick="onChangFontSize(-1)"><img src="img/ICONS/decrease font - icon.png" alt="" srcset="" class="action-icon"></button><div>|</div>
+                <button class="action-btn align-left-btn" onclick="onChangeAlign('left')"><img src="img/ICONS/align-to-left.png" alt="" srcset="" class="action-icon"></button>
+                <button class="action-btn align-center-btn" onclick="onChangeAlign('center')"><img src="img/ICONS/center-text-alignment.png" alt="" srcset="" class="action-icon"></button>
+                <button class="action-btn align-right-btn" onclick="onChangeAlign('right')"><img src="img/ICONS/align-to-right.png" alt="" srcset="" class="action-icon"></button><div>|</div>
+                <button class="action-btn font-color-btn"><img src="img/ICONS/paint-board-and-brush.png" alt="" srcset="" class="action-icon"></button>
+                <button class="action-btn strok-color-btn"><img src="img/ICONS/text stroke.png" alt="" srcset="" class="action-icon"></button>
+            </div>
+           
+            <input type="text" name="" id="" placeholder="enter text" value="" class="input-text" oninput="changeText(this.value)">
+            
+            <div class=" feachure"></div>
+           
+            <div class="save-share">
+                <button class="save-btn  download-btn"><a href="#" onclick="downloadCanvas(this)" download="file-name">Download</a></button>
+                <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
+                    <input name="img" id="imgData" type="hidden" />
+                    <button class="save-btn btn" type="submit" >Publish</button><br>
+                    <div class="share-container"></div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="footer"></footer>
+
+
+
+    <script src="js/meme-service.js"></script>
+    <script src="js/meme-controller.js"></script>
+    <script src="js/upload-service.js"></script>
+</body>
+
+</html>
