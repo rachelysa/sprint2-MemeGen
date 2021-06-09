@@ -18,8 +18,8 @@ function getImgs(){
     return gImgs;
 }
 function getImgById(idX){
-   var s= gImgs.find(img=>{
+   return gImgs.find(img=>{
         return img.id===idX
     })
-    console.log(s);
+ 
 }

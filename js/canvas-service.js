@@ -15,7 +15,7 @@ function downloadCanvas(elLink) {
 function clearCanvas() {
     gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height);
     renderPage();
-    drawImg('img/3.jpg')
+    drawImg(gImg.url)
 }
 function drawText() {
     gCtx.lineWidth = 1;

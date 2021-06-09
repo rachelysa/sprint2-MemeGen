@@ -1,7 +1,7 @@
 
 var gMeme;
 var gSwitch = 1;
-var posY=50
+
 function createMeme(imgIdx) {
     var meme = {
         selectedImgId: imgIdx,

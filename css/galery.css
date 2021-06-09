@@ -24,5 +24,7 @@
 
     justify-content: flex-start;
     /* align-items: stretch; */
+    opacity: 1;
+    transition:1s ;
  
 }

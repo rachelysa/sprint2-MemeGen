@@ -26,12 +26,10 @@ body{
     color: coral;
     position: relative;
     z-index: 10;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
     border-bottom: 1px solid coral;
   }
-  /* .main-header .logo {
-      height: 80px;
-  } */
+
   .main-header .logo img {
       display: block;
       width: 250px;
@@ -48,7 +46,9 @@ body{
     position: absolute;
     right:40px;
   }
-
+  .focus{
+    box-shadow: inset  0px -6px  0px #ffffff;;
+  }
   .main-nav,.header-container {
     height: inherit;
   }
@@ -66,8 +66,8 @@ body{
   }
 
 .main-header .main-nav li:hover .main-link {
-   box-shadow: inset  0px -6px  0px #ffffff;;
-   font-weight: bold;
+   /* box-shadow: inset  0px -6px  0px #ffffff;; */
+   font-weight: bolder;
 
   }
 
@@ -130,7 +130,7 @@ body{
 
     .main-header{
       
-        margin-bottom: 50px;
+        margin-bottom: 80px;
         position: relative;
         background-color: coral;
         padding: 0;

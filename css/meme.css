@@ -1,11 +1,33 @@
 
 /*main*/
 .main-meme{
-
+position: absolute;
     display: flex;
     flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    transition: 1s;
 }
-
+.show{
+    opacity: 1;
+    pointer-events: unset;
+}
+.back{
+    position: absolute;
+    width: 200px;
+    height: 40px;
+    top:-45px;
+    margin-bottom: 10px;
+    background-color: transparent;
+    font-size: 16px;
+    color: coral;
+    left: 15px;
+    font-weight: bold;
+    border: transparent 1px solid;
+   
+    border-radius: 10px;
+    cursor: pointer;
+}
 .canvas-container{
 
     margin: 0 auto;
@@ -14,7 +36,10 @@
     border: 1px solid rgb(0, 0, 0);
 }
 .canvas-options{
-     margin: 0 10%
+     margin: 0 10%;
+     display: flex;
+    flex-direction: column;
+ 
 }
 
 .text-actions{
@@ -47,6 +72,7 @@
     align-items: center;
     gap: 10px;
     margin-bottom: 10px;
+    flex-wrap: wrap;
 }
 .font-family-select{
     display: block;

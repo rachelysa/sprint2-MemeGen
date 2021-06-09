@@ -14,7 +14,10 @@ function renderGalery() {
     elGalery.innerHTML=strHtml;
 }
 function openMeme(el){
-    var id=el.dataset.id
-    console.log(id);
-    initMeme(id)
+    var id=el.dataset.id;
+    console.log(el);
+    var elGalery=document.querySelector('.galery-container');
+    elGalery.style.opacity=0;
+    elGalery.style.pointerEvents='none';
+    initMeme(parseInt(id))
 }

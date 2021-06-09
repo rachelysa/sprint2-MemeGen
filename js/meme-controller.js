@@ -4,24 +4,29 @@ var gCanvas;
 var gCtx;
 var gCurrMeme;
 var gImg ;
+var posY;
 function initMeme(idX) {
 
     gCanvas = document.getElementById('my-canvas')
     gCtx = gCanvas.getContext('2d');
+   posY=50;
    
-    renderFeachures(); 
     gImg = getImgById(idX);
-    console.log(gImg);
 
+var elCanvas=document.querySelector('.main-meme');
+    elCanvas.classList.toggle('show')
     createMeme(gImg.id);
     gCurrMeme=getMeme();
 
     renderPage();
     //TODO resize by the curr picture
     // resizeCanvas(250,450);
-    drawImg(gImg.url);
+    drawImg(gImg.url); 
+    renderFeachures(); 
     addListeners();
+    
 }
+
 function renderFeachures() {
     var strHtml = '';
     gEmojies.forEach(emoji => {
@@ -41,7 +46,13 @@ function renderFeachures() {
         gCanvas.addEventListener('mousemove', handleMouseMove);
         gCanvas.addEventListener('touchmove', handleMouseMove);
     }
-
+function goBackToGallery(){
+    var elCanvas=document.querySelector('.main-meme');
+    elCanvas.classList.toggle('show');
+    var elGalery=document.querySelector('.galery-container');
+    elGalery.style.opacity=1;
+    elGalery.style.pointerEvents='unset';
+}
 function changeText(text){
     gCurrMeme.lines[gCurrMeme.selectedLineIdx].txt=text
     clearCanvas();
