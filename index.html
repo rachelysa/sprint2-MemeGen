@@ -22,82 +22,111 @@
                 <button class="close-menu-btn hide" onclick="toggleMenu()">X</button>
                 <ul class="main-nav clean-list flex align-center">
 
-                    <li><a href="#" class="main-link focus">Galery</a> </li>
-                    <li><a href="#" class="main-link">Memes</a></li>
-                    <li><a href="#" class="main-link">About</a></li>
+                    <li><a href="#" class="main-link focus" data-trans="nav-gallery">Galery</a> </li>
+                    <!-- <li><a href="#" class="main-link" data-trans="nav-memes">Memes</a></li> -->
+                    <li><a href="memes.html" class="main-link" data-trans="nav-memes">Memes</a></li>
+                    <li><a href="#" class="main-link" data-trans="nav-about">About</a></li>
 
                 </ul>
             </div>
         </div>
     </header>
-    <main class="main-meme" >
-        <button class=" back " onclick="goBackToGallery()">- back to gallery</button>
+    <select onchange="onSetLang(this.value)" class="lang-select" aria-label=".form-select-lg example">
+        <option value="en">English</option>
+        <option value="he">עברית</option>
+    </select>
+    <main class="main-meme">
+        <button class=" back " data-trans="back-to-gallery" onclick="goBackToGallery()">- back to gallery</button>
         <div class="canvas-container">
-            <canvas id="my-canvas" ></canvas>
+            <canvas id="my-canvas"></canvas>
         </div>
         <div class="canvas-options">
-            <input type="text" name="" id="" placeholder="enter text" value="" class="input-text" oninput="changeText(this.value)">
+            <input type="text" data-trans="line-text" name="" id="" placeholder="enter text" value="" class="input-text"
+                oninput="changeText(this.value)">
             <div class="text-actions">
-                
-                <div class="edit-text">Edit Text Line</div>
+
+                <div class="edit-text" data-trans="edit-label">Edit Text Line</div>
                 <div class="action">
-                <div class="text-count"><span>1</span>/ <span>2</span></div>
-                <button class="action-btn add-text-btn" onclick="onAddLine()"><img src="img/ICONS/add.png" alt="" srcset="" class="action-icon" ></button>
-                <button class="action-btn delete-text-btn" onclick="onDeleteLine()"><img src="img/ICONS/trash.png" alt="" srcset="" class="action-icon"></button>
-                <button class="action-btn switch-lines-btn" onclick="onChangeLine()"><img src="img/ICONS/up-and-down-opposite-double-arrows-side-by-side.png" alt="" srcset="" class="action-icon"></button>
-               </div> 
+                    <div class="text-count"><span>1</span>/ <span>2</span></div>
+                    <button class="action-btn add-text-btn" onclick="onAddLine()"><img src="img/ICONS/add.png" alt=""
+                            srcset="" class="action-icon"></button>
+                    <button class="action-btn delete-text-btn" onclick="onDeleteLine()"><img src="img/ICONS/trash.png"
+                            alt="" srcset="" class="action-icon"></button>
+                    <button class="action-btn switch-lines-btn" onclick="onChangeLine()"><img
+                            src="img/ICONS/up-and-down-opposite-double-arrows-side-by-side.png" alt="" srcset=""
+                            class="action-icon"></button>
+                </div>
             </div>
             <select onchange="onChangeFontFamily(this.value)" class="font-family-select">
-                    <option value="lato-bold">Lato-Bold</option>
-                    <option value="lato-regular">Lato-Regular</option>
-                    <option value="eurofurence">eurofurence</option>
-                 
+                <option value="lato-bold">Lato-Bold</option>
+                <option value="lato-regular">Lato-Regular</option>
+                <option value="eurofurence">eurofurence</option>
+
             </select>
-           
+
             <div class="text-style">
                 <button class=" action-btn line-up" onclick="onchangePos(-1)">🠕</button>
-                <button class=" action-btn line-down" onclick="onchangePos(1)">🠗</button><div>|</div>
-                <button class="action-btn big-text-btn" onclick="onChangFontSize(1)"><img src="img/ICONS/increase font - icon.png" alt="" srcset="" class="action-icon"></button>
-                <button class="action-btn small-text-btn" onclick="onChangFontSize(-1)"><img src="img/ICONS/decrease font - icon.png" alt="" srcset="" class="action-icon"></button><div>|</div>
-                <button class="action-btn align-left-btn" onclick="onChangeAlign('left')"><img src="img/ICONS/align-to-left.png" alt="" srcset="" class="action-icon"></button>
-                <button class="action-btn align-center-btn" onclick="onChangeAlign('center')"><img src="img/ICONS/center-text-alignment.png" alt="" srcset="" class="action-icon"></button>
-                <button class="action-btn align-right-btn" onclick="onChangeAlign('right')"><img src="img/ICONS/align-to-right.png" alt="" srcset="" class="action-icon"></button><div>|</div>
+                <button class=" action-btn line-down" onclick="onchangePos(1)">🠗</button>
+                <div>|</div>
+                <button class="action-btn big-text-btn" onclick="onChangFontSize(1)"><img
+                        src="img/ICONS/increase font - icon.png" alt="" srcset="" class="action-icon"></button>
+                <button class="action-btn small-text-btn" onclick="onChangFontSize(-1)"><img
+                        src="img/ICONS/decrease font - icon.png" alt="" srcset="" class="action-icon"></button>
+                <div>|</div>
+                <button class="action-btn align-left-btn" onclick="onChangeAlign('left')"><img
+                        src="img/ICONS/align-to-left.png" alt="" srcset="" class="action-icon"></button>
+                <button class="action-btn align-center-btn" onclick="onChangeAlign('center')"><img
+                        src="img/ICONS/center-text-alignment.png" alt="" srcset="" class="action-icon"></button>
+                <button class="action-btn align-right-btn" onclick="onChangeAlign('right')"><img
+                        src="img/ICONS/align-to-right.png" alt="" srcset="" class="action-icon"></button>
+                <div>|</div>
                 <button type="color" class="action-btn font-color-btn">
                     <img src="img/ICONS/paint-board-and-brush.png" alt="" srcset="" class="action-icon">
-                     
-                    </button>
-                    <input type="color" value="#0000" name="" id="" class="font-color" oninput="onChangeFontColor(this.value)"><div>|</div>
+
+                </button>
+                <input type="color" value="#0000" name="" id="" class="font-color"
+                    oninput="onChangeFontColor(this.value)">
+                <div>|</div>
                 <button class="action-btn strok-color-btn">
-                    <img src="img/ICONS/text stroke.png" alt="" srcset="" class="action-icon"> 
-                     
-                    </button>
-            <input type="color" value="#0000" name="" id=""class="font-color" oninput="onChangeStrokColor(this.value)" >
-                    
+                    <img src="img/ICONS/text stroke.png" alt="" srcset="" class="action-icon">
+
+                </button>
+                <input type="color" value="#0000" name="" id="" class="font-color"
+                    oninput="onChangeStrokColor(this.value)">
+
             </div>
-           
-        
-            
+
+
+
             <div class=" feachure"></div>
-           
+
             <div class="save-share">
-                <button class="save-btn  download-btn"><a href="#" onclick="downloadCanvas(this)" download="file-name">Download</a></button>
+                <button class="save-btn  download-btn"><a href="#" onclick="downloadCanvas(this)" data-trans="download"
+                        download="file-name">Download</a></button>
+                        <button class="save-btn  download-btn"><a href="#" onclick="saveMemeToStorage()" data-trans="save"
+                            download="file-name">save Meme</a></button>
                 <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
                     <input name="img" id="imgData" type="hidden" />
-                    <button class="save-btn btn" type="submit" >Publish</button><br>
+                    <button class="save-btn btn" type="submit" data-trans="publish">Publish</button><br>
                     <div class="share-container"></div>
                 </form>
             </div>
         </div>
     </main>
+    <section class="search-kind">
+         <div  class="search-text">
+        <input type="text" name="" id="" data-trans="search" placeholder="search" value=""
+            class="search-input" oninput="onSearch(this.value)"></div>
+        <div class="search"></div>
+    </section>
 
-    <input type="text" name="" id="" placeholder="search" value="" class="search-text" oninput="onSearch(this.value)">
-     
     <main class="galery-container">
-       
-         
+
+
     </main>
-   
+
     <footer class="footer"></footer>
+    <script src="js/services/storage-service.js"></script>
     <script src="js/services/canvas-service.js"></script>
     <script src="js/services/img-service.js"></script>
     <script src="js/services/i18n-service.js"></script>

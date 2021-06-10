@@ -1,77 +1,49 @@
 'use strict'
 var gTrans = {
-    title: {
-        en: 'My book shop',
-        he: 'חנות הספרים שלי'
+    'nav-gallery': {
+        en: 'Gallery',
+        he: 'גלריה'
     },
-    add: {
-        en: 'add new book',
-        he: 'הוסף ספר חדש',
+    'nav-memes': {
+        en: 'Memes',
+        he: 'ממים',
     },
-    'add-book-name': {
-        en: 'enter book name',
-        he: 'הכנס שם לספר',
+    'nav-about': {
+        en: 'About',
+        he: 'אודות',
     },
-    'add-book-price': {
-        en: 'enter book price',
-        he: 'הכנס מחיר לספר '
+    'back-to-gallery': {
+        en: ' - Back to gallery ',
+        he: 'בחזרה לגלריה -  '
     },
-    'add-book-btn': {
-        en: 'add',
-        he: 'הוסף',
+    'line-text': {
+        en: 'enter text',
+        he: 'הכנס טקסט',
     },
-    'next-btn': {
-        en: 'next',
-        he: 'הבא',
+    'edit-label': {
+        en: 'Edit text line',
+        he: 'עריכת השורה',
     },
-    'prev-btn': {
-        en: 'prev',
-        he: 'קודם',
+    download: {
+        en: 'Download',
+        he: 'הורד',
     },
-    id: {
-        en: 'id',
-        he: 'קוד ספר'
+    publish: {
+        en: 'Publish',
+        he: 'העלה'
     },
-    name: {
-        en: 'name',
-        he: 'שם'
+    share: {
+        en: 'Sare',
+        he: 'שתף'
     },
-    price: {
-        en: 'price',
-        he: 'מחיר'
+   search: {
+        en: 'search',
+        he: 'חפש'
+    }, 
+    save: {
+        en: 'Save Meme',
+        he: 'שמור מם'
     },
-    rate: {
-        en: 'rate',
-        he: 'ניקוד'
-    },
-    action: {
-        en: 'action',
-        he: 'פעולות'
-    },
-    'read-btn': {
-        en: 'read',
-        he: 'פרטים'
-    },
-    'update-btn': {
-        en: 'update',
-        he: 'עדכן'
-    },
-    'delete-btn': {
-        en: 'delete',
-        he: 'מחק'
-    },
-    close: {
-        en: 'close',
-        he: 'סגור'
-    },
-    read: {
-        en: 'read details',
-        he: 'פרטי הספר'
-    },
-    'update-book': {
-        en: 'add new price',
-        he: 'הכנס מחיר חדש'
-    }
 }
 
 var gCurrLang = 'en';

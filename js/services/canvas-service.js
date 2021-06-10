@@ -1,6 +1,8 @@
 'use strict'
 const gTouchEvs = ['touchstart', 'touchmove', 'touchend'];
 var gLineToDrop;
+var gStartPos;
+
 function resizeCanvas(height, width) {
 
     // Note: changing the canvas dimension this way clears the canvas
@@ -19,6 +21,7 @@ function clearCanvas() {
     gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height);
     renderPage();
     drawImg(gCurrImg.url)
+    doTrans();
 }
 
 function drawText() {
@@ -62,7 +65,6 @@ function drawRect(x, y, sizeX, sizeY) {
     gCtx.strokeStyle = 'black'
     gCtx.stroke()
 }
-var gStartPos;
 
 function handleMouseDown(e) {
     e.preventDefault();

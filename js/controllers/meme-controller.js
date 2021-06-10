@@ -6,24 +6,25 @@ var gCurrMeme;
 var gCurrImg;
 var posY;
 
-function initMeme(idX,width,height) {
+function initMeme(idX, width, height, src) {
 
     gCanvas = document.getElementById('my-canvas')
     gCtx = gCanvas.getContext('2d');
     posY = 50;
-
-    gCurrImg = getImgById(idX);
+    if (width === 0) width = 250;
+    if (height === 0) height = 250
+    gCurrImg = (idX) ? getImgById(parseInt(idX)) : { id: 0, url: src, keywords: [] };
 
     var elCanvas = document.querySelector('.main-meme');
     elCanvas.classList.toggle('show')
     createMeme(gCurrImg.id);
     gCurrMeme = getMeme();
- 
+
     //TODO resize by the curr picture
-    console.log(width,height);
-    resizeCanvas(height+100,width+100);
+    console.log(width, height);
+    resizeCanvas(height + 100, width + 100);
     renderPage();
-   
+
     drawImg(gCurrImg.url);
     renderFeachures();
     addListeners();
@@ -57,9 +58,9 @@ function goBackToGallery() {
     var elGalery = document.querySelector('.galery-container');
     elGalery.style.opacity = 1;
     elGalery.style.pointerEvents = 'unset';
-    var elSearch=document.querySelector('.search-text')
-    elSearch.style.opacity=1;
-    elSearch.style.pointerEvents='unset';
+    var elSearch = document.querySelector('.search-kind')
+    elSearch.style.opacity = 1;
+    elSearch.style.pointerEvents = 'unset';
 }
 
 function changeText(text) {
@@ -127,4 +128,11 @@ function onChangeFontFamily(font) {
 function onchangePos(pos) {
     changePos(pos);
     clearCanvas();
+}
+
+function saveMemeToStorage() {
+    const data = gCanvas.toDataURL();
+    gMemes.push(data)
+    saveToStorage('memes', gMemes);
+
 }

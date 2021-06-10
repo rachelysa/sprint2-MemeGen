@@ -15,8 +15,20 @@
     
 
 }
+.upload{
+    display: block;
+    width: 100%;
+    height: 150px;
+    margin-bottom: 10px;
+    background-color: coral;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    border: transparent 1px solid;
+    border-radius: 10px;
+}
 .img-container img:hover{
-    border: 4px solid coral;
+    border: 1px solid coral;
 }
 .galery-container{
     /* max-width: 1000px; */
@@ -24,7 +36,7 @@
 	flex-direction: column;
 	flex-wrap: wrap;
     height: 100vw;
-	 width: 100%; 
+	 width: 100vw; 
 
     gap:10px;
     margin: 20px;
@@ -40,17 +52,42 @@
  
 }
 .search-text{
+   
+  
+    display: flex;
+    gap:10px;
+    flex-basis: 50%;
+      justify-content: center;
+}
+.search-input{
     display: block;
-    position: absolute;
-    top:110px;
-   left: 50%;
-   transform: translateX(-50%);
-    margin: auto;
-    width: 70%;
+    width: 90%;
     height: 40px;
     margin-bottom: 20px;
     padding: 15px;
     border: transparent 1px solid;
     border-radius: 20px;
     transition: 1s;
+}
+.search-kind{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  flex-direction: column;
+}
+
+  .search{
+      display: flex;
+      gap:10px;
+      flex-basis: 50%;
+        justify-content: center;
+        flex-wrap: wrap;
+  }
+  .search-item{
+  color: coral;
+}
+@media (min-width:1065px){
+    .search-kind{
+        flex-direction: row;
+    }
 }
