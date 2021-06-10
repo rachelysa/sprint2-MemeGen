@@ -44,6 +44,14 @@ var gTrans = {
         en: 'Save Meme',
         he: 'שמור מם'
     },
+    'your-upload': {
+        en: 'upload from your computer',
+        he: 'העלה מהמחשב שלך'
+    }, 
+    file: {
+        en: 'file not load',
+        he: 'קובץ לא עלה'
+    },
 }
 
 var gCurrLang = 'en';

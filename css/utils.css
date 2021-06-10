@@ -6,6 +6,8 @@ body{
     background-color: rgb(231, 231, 231);
     background-image: url('../img/back.jpg');
     background-size: cover;
+    width:100vw;
+    height: 100vh;;
 }
 body.rtl {
   direction: rtl;
@@ -179,17 +181,18 @@ body.rtl .lang-select {
     transform: translateX(0);
   }
 
+
   @media (min-width:1065px) {
     body.rtl .lang-select {
       transform: translateX(100%);
     }
     .main-header{
       
-        margin-bottom: 80px;
+     
         position: relative;
         background-color: coral;
         padding: 0;
-        /* z-index: 10; */
+        
     }
     .main-nav{
         flex-direction: row;
@@ -229,5 +232,14 @@ body.rtl .lang-select {
     .flex{
         display: flex;
     }
-
-  
+    .main-logo{
+height: 100vh;
+width: 100vw;
+    }
+  .my-logo{
+    height:400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  }

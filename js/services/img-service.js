@@ -1,7 +1,7 @@
 'use strict'
 var gImgs = [];
 var gKeywords=['happy','men','funny','fation','style','selebs'];
-gKeywords=[{txt:'happy',size:20},{txt:'men',size:20},{txt:'funny',size:20},{txt:'fashion',size:20},{txt:'style',size:20},{txt:'selebs',size:20}]
+gKeywords=[{txt:'happy',size:30},{txt:'men',size:20},{txt:'funny',size:14},{txt:'fashion',size:32},{txt:'style',size:16},{txt:'selebs',size:25}]
 function createImgs() {
     for (let i = 0; i < 20; i++) {
         createImg(i)
@@ -53,17 +53,18 @@ function search(txt){
  return imgs
 }
 function loadImageFromInput(ev) {
-    document.querySelector('.share-container').innerHTML = ''
+   
     var reader = new FileReader()
 
     reader.onload = function (event) {
-        console.log('event:', event)
-        var img = new Image()
+
+        var img = new Image();
+         img.src = event.target.result
         img.onload =()=> {
            
-            openMeme(img,img.offsetWidth,img.offsetHeight);
+            openMeme(img,this.width,this.height);
         }
-     img.src = event.target.result
+    
     }
     reader.readAsDataURL(ev.target.files[0])
 }

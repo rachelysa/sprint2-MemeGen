@@ -4,6 +4,7 @@ function initGalery() {
     createImgs();
     renderGalery();
     renderSearch();
+    doTrans()
     gMemes = loadFromStorage('memes');
     if (!gMemes) gMemes = [];
 
@@ -23,7 +24,7 @@ function initMemes() {
     elGalery.innerHTML = strHtml;
 }
 function renderGalery(imgs = getImgs()) {
-    var strHtml = '<div ><input type="file"  class=" upload" name="image" onchange="onImgInput(event)" /></div>';
+    var strHtml = '<div  ><input type="file"  class=" upload" name="image" onchange="onImgInput(event)" /><div class="upload-style"data-trans="your-upload"></div></div>';
 
     imgs.forEach(img => {
         strHtml += `<div data-id="${img.id}"class="img-container" onclick="openMeme(this)"><img src="${img.url}" alt="" srcset="" class="galery-img" ></div>`
@@ -49,8 +50,8 @@ function openMeme(el) {
     
 
     var elGalery = document.querySelector('.galery-container');
-    elGalery.style.opacity = 0;
-    elGalery.style.pointerEvents = 'none';
+    elGalery.style.display = 'none';
+
     var elSearch = document.querySelector('.search-kind')
     elSearch.style.opacity = 0;
     elSearch.style.pointerEvents = 'none';

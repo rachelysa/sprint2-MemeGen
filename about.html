@@ -4,24 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>memes</title>
-    <link rel="stylesheet" href="css/galery.css">
+    <title>about</title>
     <link rel="stylesheet" href="css/utils.css">
 </head>
-<body onload="initMemes()">
+<body>
     <header class="main-header">
         <div class="header-container main-layout flex space-between align-center">
             <div class="logo"><img src="img/LOGO.png"></div>
             <button class="action-btn card-menu-btn" onclick="toggleMenu()"><img src="img/ICONS/align-to-right.png"
                     alt="" srcset="" class="action-icon"></button>
-            <!-- <button class="card-menu-btn"><span class="material-icons">menu</span></button> -->
+       
             <div class="nav-links">
                 <button class="close-menu-btn hide" onclick="toggleMenu()">X</button>
                 <ul class="main-nav clean-list flex align-center">
+
                     <li><a href="index.html" class="main-link " data-trans="nav-gallery">Galery</a> </li>
-                    <!-- <li><a href="#" class="main-link " data-trans="nav-gallery">Galery</a> </li> -->
-                    <li><a href="#" class="main-link focus" data-trans="nav-memes">Memes</a></li>
-                    <li><a href="about.html" class="main-link" data-trans="nav-about">About</a></li>
+                    <!-- <li><a href="#" class="main-link" data-trans="nav-memes">Memes</a></li> -->
+                    <li><a href="memes.html" class="main-link" data-trans="nav-memes">Memes</a></li>
+                    <li><a href="#" class="main-link focus" data-trans="nav-about">About</a></li>
 
                 </ul>
             </div>
@@ -31,20 +31,10 @@
         <option value="en">English</option>
         <option value="he">עברית</option>
     </select>
-    <main class="galery-container">
-
-
+    <main class="main-logo">
+        <img class="my-logo"src="img/logoorange.png" alt="" srcset="">
     </main>
-
-
-    <script src="js/services/storage-service.js"></script>
-    <script src="js/services/canvas-service.js"></script>
-    <script src="js/services/img-service.js"></script>
-    <script src="js/services/i18n-service.js"></script>
-    <script src="js/services/meme-service.js"></script>
-    <script src="js/services/upload-service.js"></script>
     <script src="js/controllers/utils-controller.js"></script>
-    <script src="js/controllers/galery-controller.js"></script>
-    <script src="js/controllers/meme-controller.js"></script>
+    <script src="js/services/i18n-service.js"></script>
 </body>
 </html>

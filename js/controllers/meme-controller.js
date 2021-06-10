@@ -22,7 +22,7 @@ function initMeme(idX, width, height, src) {
 
     //TODO resize by the curr picture
     console.log(width, height);
-    resizeCanvas(height + 100, width + 100);
+    resizeCanvas(height + 200, width + 200);
     renderPage();
 
     drawImg(gCurrImg.url);
@@ -56,8 +56,8 @@ function goBackToGallery() {
     var elCanvas = document.querySelector('.main-meme');
     elCanvas.classList.toggle('show');
     var elGalery = document.querySelector('.galery-container');
-    elGalery.style.opacity = 1;
-    elGalery.style.pointerEvents = 'unset';
+    elGalery.style.display = 'flex';
+
     var elSearch = document.querySelector('.search-kind')
     elSearch.style.opacity = 1;
     elSearch.style.pointerEvents = 'unset';

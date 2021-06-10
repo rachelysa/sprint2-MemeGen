@@ -17,7 +17,7 @@
             <div class="logo"><img src="img/LOGO.png"></div>
             <button class="action-btn card-menu-btn" onclick="toggleMenu()"><img src="img/ICONS/align-to-right.png"
                     alt="" srcset="" class="action-icon"></button>
-            <!-- <button class="card-menu-btn"><span class="material-icons">menu</span></button> -->
+       
             <div class="nav-links">
                 <button class="close-menu-btn hide" onclick="toggleMenu()">X</button>
                 <ul class="main-nav clean-list flex align-center">
@@ -25,7 +25,7 @@
                     <li><a href="#" class="main-link focus" data-trans="nav-gallery">Galery</a> </li>
                     <!-- <li><a href="#" class="main-link" data-trans="nav-memes">Memes</a></li> -->
                     <li><a href="memes.html" class="main-link" data-trans="nav-memes">Memes</a></li>
-                    <li><a href="#" class="main-link" data-trans="nav-about">About</a></li>
+                    <li><a href="about.html" class="main-link" data-trans="nav-about">About</a></li>
 
                 </ul>
             </div>
@@ -80,19 +80,23 @@
                 <button class="action-btn align-right-btn" onclick="onChangeAlign('right')"><img
                         src="img/ICONS/align-to-right.png" alt="" srcset="" class="action-icon"></button>
                 <div>|</div>
+               
                 <button type="color" class="action-btn font-color-btn">
-                    <img src="img/ICONS/paint-board-and-brush.png" alt="" srcset="" class="action-icon">
+                 
 
-                </button>
                 <input type="color" value="#0000" name="" id="" class="font-color"
-                    oninput="onChangeFontColor(this.value)">
-                <div>|</div>
-                <button class="action-btn strok-color-btn">
+                    oninput="onChangeFontColor(this.value)">   
+                    <img src="img/ICONS/paint-board-and-brush.png" alt="" srcset="" class="action-icon">
+                </button>
+
+
+                <button class="action-btn strok-color-btn"> 
+                    <input type="color" value="#0000" name="" id="" class="font-color"
+                    oninput="onChangeStrokColor(this.value)">
                     <img src="img/ICONS/text stroke.png" alt="" srcset="" class="action-icon">
 
                 </button>
-                <input type="color" value="#0000" name="" id="" class="font-color"
-                    oninput="onChangeStrokColor(this.value)">
+               
 
             </div>
 
@@ -125,7 +129,7 @@
 
     </main>
 
-    <footer class="footer"></footer>
+
     <script src="js/services/storage-service.js"></script>
     <script src="js/services/canvas-service.js"></script>
     <script src="js/services/img-service.js"></script>

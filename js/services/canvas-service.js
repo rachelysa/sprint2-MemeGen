@@ -18,7 +18,7 @@ function downloadCanvas(elLink) {
 }
 
 function clearCanvas() {
-    gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height);
+ 
     renderPage();
     drawImg(gCurrImg.url)
     doTrans();
