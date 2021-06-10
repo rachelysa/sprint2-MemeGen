@@ -18,7 +18,7 @@ function downloadCanvas(elLink) {
 function clearCanvas() {
     gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height);
     renderPage();
-    drawImg(gImg.url)
+    drawImg(gCurrImg.url)
 }
 
 function drawText() {
@@ -62,24 +62,24 @@ function drawRect(x, y, sizeX, sizeY) {
     gCtx.strokeStyle = 'black'
     gCtx.stroke()
 }
-
+var gStartPos;
 
 function handleMouseDown(e) {
     e.preventDefault();
-    startX = parseInt(e.offsetX);
-    startY = parseInt(e.offsetY);
+    gStartPos={x:parseInt(e.offsetX),y:parseInt(e.offsetY)}
+
 
     // Put your mousedown stuff here
     gMeme.lines.forEach(line => {
 
-        if (textHittest(startX, startY, line)) {
+        if (textHittest(gStartPos.x, gStartPos.y, line)) {
             gLineToDrop = line;
             return;
         }
     })
     gMeme.feachures.forEach(f => {
 
-        if (textHittest(startX, startY, f)) {
+        if (textHittest(gStartPos.x, gStartPos.y, f)) {
             gLineToDrop = f;
             return;
         }
@@ -97,14 +97,14 @@ function textHittest(x, y, line) {
 function handleMouseMove(e) {
     if (!gLineToDrop) { return; }
     e.preventDefault();
-    mouseX = parseInt(e.offsetX);
-    mouseY = parseInt(e.offsetY);
+    var mouseX = parseInt(e.offsetX);
+    var mouseY = parseInt(e.offsetY);
 
     // Put your mousemove stuff here
-    var dx = mouseX - startX;
-    var dy = mouseY - startY;
-    startX = mouseX;
-    startY = mouseY;
+    var dx = mouseX - gStartPos.x;
+    var dy = mouseY - gStartPos.y;
+    gStartPos.x = mouseX;
+    gStartPos.y = mouseY;
 
 
     gLineToDrop.pos.x += dx;

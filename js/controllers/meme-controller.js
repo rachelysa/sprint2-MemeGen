@@ -6,7 +6,7 @@ var gCurrMeme;
 var gCurrImg;
 var posY;
 
-function initMeme(idX) {
+function initMeme(idX,width,height) {
 
     gCanvas = document.getElementById('my-canvas')
     gCtx = gCanvas.getContext('2d');
@@ -18,10 +18,12 @@ function initMeme(idX) {
     elCanvas.classList.toggle('show')
     createMeme(gCurrImg.id);
     gCurrMeme = getMeme();
-
-    renderPage();
+ 
     //TODO resize by the curr picture
-    // resizeCanvas(250,450);
+    console.log(width,height);
+    resizeCanvas(height+100,width+100);
+    renderPage();
+   
     drawImg(gCurrImg.url);
     renderFeachures();
     addListeners();
