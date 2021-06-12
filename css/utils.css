@@ -19,18 +19,22 @@ body.rtl .lang-select {
 
 /*fonts*/
 @font-face {
-    font-family: lato-bold;
-    src: url(../fonts/lato/Lato-Bold.ttf);
+    font-family: anton;
+    src: url(../fonts/Anton-Regular.ttf);
   }
   
   @font-face {
-    font-family: lato-regular;
-    src: url(../fonts/lato/Lato-Regular.ttf);
+    font-family: dancing;
+    src: url(../fonts/DancingScript-Bold.ttf);
   }
   
   @font-face {
     font-family: eurofurence;
     src: url(../fonts/eurofurence/eurof55.ttf);
+  }
+  @font-face {
+    font-family: Stint;
+    src: url(../fonts/StintUltraCondensed-Regular.ttf);
   }
 
 .main-header {
@@ -182,7 +186,7 @@ body.rtl .lang-select {
   }
 
 
-  @media (min-width:1065px) {
+  @media (min-width:1200px) {
     body.rtl .lang-select {
       transform: translateX(100%);
     }

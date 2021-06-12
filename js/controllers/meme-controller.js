@@ -20,9 +20,7 @@ function initMeme(idX, width, height, src) {
     createMeme(gCurrImg.id);
     gCurrMeme = getMeme();
 
-    //TODO resize by the curr picture
-    console.log(width, height);
-    resizeCanvas(height + 200, width + 200);
+    resizeCanvas(height, width);
     renderPage();
 
     drawImg(gCurrImg.url);
@@ -132,7 +130,27 @@ function onchangePos(pos) {
 
 function saveMemeToStorage() {
     const data = gCanvas.toDataURL();
+   
     gMemes.push(data)
     saveToStorage('memes', gMemes);
 
+}
+async function shareCanvas() {
+    const canvasElement = gCanvas;
+    const dataUrl = canvasElement.toDataURL();
+    const blob = await (await fetch(dataUrl)).blob();
+    const filesArray = [
+        new File(
+            [blob],
+            'animation.png',
+            {
+                type: blob.type,
+                lastModified: new Date().getTime()
+            }
+        )
+    ];
+    const shareData = {
+        files: filesArray,
+    };
+    navigator.share(shareData);
 }

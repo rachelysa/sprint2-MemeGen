@@ -1,13 +1,16 @@
 
 /*main*/
 .main-meme{
-position: fixed;
+position: absolute;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    left: 5%;
+    transform: translateX(7%);
     opacity: 0;
     pointer-events: none;
     transition: 1s;
-   
+
 }
 
 .show{
@@ -25,14 +28,18 @@ position: fixed;
     font-size: 16px;
     color: coral;
     /* background-color: white; */
-    left: 15px;
+    padding-inline-start: 15px;
     font-weight: bold;
     border: transparent 1px solid;
    
     border-radius: 10px;
     cursor: pointer;
+    transition: 1s;
 }
-
+.back:hover{
+background-color: coral;
+color: white;
+}
 .canvas-container{
 
     margin: 0 auto;
@@ -161,6 +168,8 @@ position: fixed;
     font-weight: bold;
     border: transparent 1px solid;
     border-radius: 10px;
+    flex: 1;
+
 }
 
 .save-btn a{
@@ -172,10 +181,12 @@ position: fixed;
     width: 100%;
 }
 
-@media (min-width:1065px) {
+
+@media (min-width:1200px) {
 
     .main-meme{
-       
+        left: 0;
+        transform: translateX(0);
         flex-direction: row;
        justify-content: center;
        gap:30px
@@ -185,7 +196,11 @@ position: fixed;
     }
     .canvas-options{
         flex-basis: 50%;
-        margin:  0 5%;
+        margin: 0 1%;
+    }
+    .save-share{
+display: flex;
+gap:10px
     }
 }
 

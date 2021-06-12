@@ -12,9 +12,9 @@ function resizeCanvas(height, width) {
 
 function downloadCanvas(elLink) {
     const data = gCanvas.toDataURL()
-    console.log('DATA', data);
+
     elLink.href = data
-    elLink.download = 'puki'
+    elLink.download = 'meme'
 }
 
 function clearCanvas() {
@@ -25,7 +25,7 @@ function clearCanvas() {
 }
 
 function drawText() {
-    gCtx.lineWidth = 1;
+    gCtx.lineWidth = 2;
     gCurrMeme.lines.forEach(line => {
         gCtx.font = line.size + 'px ' + line.font;
         gCtx.strokeStyle = line.stroke;

@@ -17,7 +17,7 @@
             <div class="logo"><img src="img/LOGO.png"></div>
             <button class="action-btn card-menu-btn" onclick="toggleMenu()"><img src="img/ICONS/align-to-right.png"
                     alt="" srcset="" class="action-icon"></button>
-       
+
             <div class="nav-links">
                 <button class="close-menu-btn hide" onclick="toggleMenu()">X</button>
                 <ul class="main-nav clean-list flex align-center">
@@ -58,10 +58,10 @@
                 </div>
             </div>
             <select onchange="onChangeFontFamily(this.value)" class="font-family-select">
-                <option value="lato-bold">Lato-Bold</option>
-                <option value="lato-regular">Lato-Regular</option>
+                <option value="anton">anton</option>
+                <option value="dancing">dancing</option>
                 <option value="eurofurence">eurofurence</option>
-
+                <option value="Stint">Stint</option>
             </select>
 
             <div class="text-style">
@@ -80,23 +80,23 @@
                 <button class="action-btn align-right-btn" onclick="onChangeAlign('right')"><img
                         src="img/ICONS/align-to-right.png" alt="" srcset="" class="action-icon"></button>
                 <div>|</div>
-               
-                <button type="color" class="action-btn font-color-btn">
-                 
 
-                <input type="color" value="#0000" name="" id="" class="font-color"
-                    oninput="onChangeFontColor(this.value)">   
+                <button type="color" class="action-btn font-color-btn">
+
+
+                    <input type="color" value="#0000" name="" id="" class="font-color"
+                        oninput="onChangeFontColor(this.value)">
                     <img src="img/ICONS/paint-board-and-brush.png" alt="" srcset="" class="action-icon">
                 </button>
 
 
-                <button class="action-btn strok-color-btn"> 
+                <button class="action-btn strok-color-btn">
                     <input type="color" value="#0000" name="" id="" class="font-color"
-                    oninput="onChangeStrokColor(this.value)">
+                        oninput="onChangeStrokColor(this.value)">
                     <img src="img/ICONS/text stroke.png" alt="" srcset="" class="action-icon">
 
                 </button>
-               
+
 
             </div>
 
@@ -107,8 +107,10 @@
             <div class="save-share">
                 <button class="save-btn  download-btn"><a href="#" onclick="downloadCanvas(this)" data-trans="download"
                         download="file-name">Download</a></button>
-                        <button class="save-btn  download-btn"><a href="#" onclick="saveMemeToStorage()" data-trans="save"
-                            download="file-name">save Meme</a></button>
+                <button class="save-btn  download-btn"><a href="#" onclick="saveMemeToStorage()" data-trans="save"
+                        download="file-name">save Meme</a></button>
+                <button class="save-btn  download-btn"><a href="#" onclick="shareCanvas()" data-trans="api-share"
+                        download="file-name">share in MyApi web</a></button>
                 <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
                     <input name="img" id="imgData" type="hidden" />
                     <button class="save-btn btn" type="submit" data-trans="publish">Publish</button><br>
@@ -118,9 +120,10 @@
         </div>
     </main>
     <section class="search-kind">
-         <div  class="search-text">
-        <input type="text" name="" id="" data-trans="search" placeholder="search" value=""
-            class="search-input" oninput="onSearch(this.value)"></div>
+        <div class="search-text">
+            <input type="text" name="" id="" data-trans="search" placeholder="search" value="" class="search-input"
+                oninput="onSearch(this.value)">
+        </div>
         <div class="search"></div>
     </section>
 

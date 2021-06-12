@@ -24,13 +24,14 @@ function initMemes() {
     elGalery.innerHTML = strHtml;
 }
 function renderGalery(imgs = getImgs()) {
-    var strHtml = '<div  ><input type="file"  class=" upload" name="image" onchange="onImgInput(event)" /><div class="upload-style"data-trans="your-upload"></div></div>';
+    var strHtml = '<div  ><input type="file" title="" class=" upload" name="image" onchange="onImgInput(event)" /><div class="upload-style"data-trans="your-upload"></div></div>';
 
     imgs.forEach(img => {
         strHtml += `<div data-id="${img.id}"class="img-container" onclick="openMeme(this)"><img src="${img.url}" alt="" srcset="" class="galery-img" ></div>`
     })
-    var elGalery = document.querySelector('.galery-container');
+      var elGalery = document.querySelector('.galery-container');
     elGalery.innerHTML = strHtml;
+
 }
 
 function renderSearch() {
@@ -55,14 +56,15 @@ function openMeme(el) {
     var elSearch = document.querySelector('.search-kind')
     elSearch.style.opacity = 0;
     elSearch.style.pointerEvents = 'none';
-    
-    initMeme(id, el.offsetWidth, el.offsetHeight,el.src)
+  
+    initMeme(id,( el.querySelector('img'))? el.querySelector('img').width:el.width, ( el.querySelector('img'))? el.querySelector('img').height:el.height,el.src)
 }
 
 function onSearch(txt) {
     var imgs = search(txt);
     renderGalery(imgs);
     renderSearch();
+    doTrans()
 }
 
 function onImgInput(ev) {

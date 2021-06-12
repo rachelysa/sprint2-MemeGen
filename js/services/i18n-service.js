@@ -13,8 +13,8 @@ var gTrans = {
         he: 'אודות',
     },
     'back-to-gallery': {
-        en: ' - Back to gallery ',
-        he: 'בחזרה לגלריה -  '
+        en: '- Back to gallery ',
+        he: 'בחזרה לגלריה -'
     },
     'line-text': {
         en: 'enter text',
@@ -29,8 +29,8 @@ var gTrans = {
         he: 'הורד',
     },
     publish: {
-        en: 'Publish',
-        he: 'העלה'
+        en: 'share in facebook',
+        he: 'שתף בפייסבוק'
     },
     share: {
         en: 'Sare',
@@ -51,6 +51,10 @@ var gTrans = {
     file: {
         en: 'file not load',
         he: 'קובץ לא עלה'
+    },  
+    'api-share': {
+        en: 'Share in Api',
+        he: 'שתף עם Api'
     },
 }
 

@@ -21,7 +21,7 @@
     height: 140px;
     /* margin-bottom: 10px; */
     background-color: coral;
-    font-size: 16px;
+
     color: white;
     font-weight: bold;
     border: transparent 1px solid;
@@ -29,6 +29,7 @@
  padding-top: 20px;
  position: absolute;
  opacity: 0;
+ cursor: pointer;
 
 }
 .upload-style{
@@ -36,38 +37,46 @@
     height: 155px;
     margin-bottom: 10px;
     background-color: coral;
-    font-size: 16px;
+    font-size: 19px;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 16px;
-    color:white
+
+    color:white;
+    cursor: pointer;
+    transition: 0.5s;
 }
+
 .img-container img:hover{
 
  opacity: 0.7;
 }
+
 .galery-container{
-    /* max-width: 1000px; */
+ 
     display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-    height: 100vw;
+    height:calc(100vw *0.7);
+    /* height: calc( var(--windowHeight) / 2 ); */
 	 width: 100vw; 
 
     gap:10px;
     margin: 20px;
 
-    justify-content: flex-start;
-    align-items: center;
-
+    justify-content: stretch;
+    align-items: stretch;
     opacity: 1;
     transition:1s ;
-
-   
-  
  
+   
+ 
+}
+@media screen and (max-width: 500px) {
+  .galery-container{
+    height:calc(100vw *0.5);
+  }
 }
 .search-text{
    
@@ -77,13 +86,14 @@
     flex-basis: 50%;
       justify-content: center;
       align-items: center;
+      width: 60%;
 }
 .search-input{
     display: block;
     width: 90%;
     height: 40px;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    /* margin-bottom: 20px;
+    margin-top: 20px; */
     padding: 15px;
     border: transparent 1px solid;
     border-radius: 20px;
@@ -99,6 +109,7 @@
   border-bottom: 2px solid coral;
   align-items: center;
   margin: 10px;
+  padding: 20px;
 }
 
   .search{
@@ -106,13 +117,22 @@
       gap:10px;
       flex-basis: 50%;
         justify-content: center;
+   align-items: center;
         flex-wrap: wrap;
   }
   .search-item{
   color: coral;
+  cursor: pointer;
+  transition: 1s;
 }
-@media (min-width:1065px){
+.search-item:hover{
+ color: chocolate;
+ border-bottom: 1px solid chocolate;
+}
+@media (min-width:1200px){
     .search-kind{
         flex-direction: row;
     }
+  
+
 }

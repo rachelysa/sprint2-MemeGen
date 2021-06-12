@@ -1,7 +1,7 @@
 'use strict'
 var gImgs = [];
-var gKeywords=['happy','men','funny','fation','style','selebs'];
-gKeywords=[{txt:'happy',size:30},{txt:'men',size:20},{txt:'funny',size:14},{txt:'fashion',size:32},{txt:'style',size:16},{txt:'selebs',size:25}]
+
+var gKeywords=[{txt:'happy',size:30},{txt:'man',size:20},{txt:'funny',size:14},{txt:'fashion',size:32},{txt:'style',size:16},{txt:'celebs',size:25}]
 function createImgs() {
     for (let i = 0; i < 20; i++) {
         createImg(i)

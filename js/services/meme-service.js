@@ -7,9 +7,9 @@ function createMeme(imgIdx) {
         selectedImgId: imgIdx,
         selectedLineIdx: 0,
         feachures: [],
-        lines: [{ txt: '', size: 40, align: 'center', color: 'white', stroke: 'black', pos: { x: gCanvas.width / 2, y: posY }, font: 'lato-bold' }]
+        lines: [{ txt: '', size: 40, align: 'center', color: 'white', stroke: 'black', pos: { x: gCanvas.width / 2, y: posY }, font: 'anton' }]
     }
-    posY += 50;
+
     gMeme = meme;
 }
 function getMeme() {
@@ -17,15 +17,24 @@ function getMeme() {
 }
 
 function addLine() {
-    var line = { txt: '', size: 40, align: 'center', color: 'white', stroke: 'black', pos: { x: gCanvas.width / 2, y: posY }, font: 'lato-bold' };
-    posY += 50;
+    switch (posY) {
+        case 50:
+            posY = gCanvas.height - 30;
+          break;
+        case gCanvas.height - 30:
+            posY = gCanvas.height / 2;
+          break;
+      }
+    var line = { txt: '', size: 40, align: 'center', color: 'white', stroke: 'black', pos: { x: gCanvas.width / 2, y: posY }, font: 'anton' };
+    // posY += 50;
     gMeme.lines.push(line);
     gMeme.selectedLineIdx = gMeme.lines.length - 1;
+    
 }
 
 
 function changeCurrLine() {
-    if (gMeme.lines.length === 0) return
+    if (gMeme.lines.length === 1) return
     if (gMeme.selectedLineIdx + 1 === gMeme.lines.length || gMeme.selectedLineIdx === 0) { gSwitch = gSwitch * -1 };
     gMeme.selectedLineIdx += gSwitch
 }
