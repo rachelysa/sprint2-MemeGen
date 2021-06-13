@@ -1,7 +1,7 @@
 
 /*main*/
 .main-meme{
-position: absolute;
+/* position: absolute; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,7 +10,7 @@ position: absolute;
     transition: 1s;
     padding-top: 30px;
     left: 50%;
-    transform: translateX(-50%);
+    /* transform: translateX(-50%); */
 }
 
 .show{
@@ -22,7 +22,8 @@ position: absolute;
     position: absolute;
     width: 200px;
     height: 40px;
-    top:-19px;
+    top: 119px;
+   
     margin-bottom: 10px;
     background-color: transparent;
     font-size: 16px;
@@ -44,7 +45,7 @@ color: white;
 
     margin: 0 auto;
     max-width: 90%;
-
+    
 }
 #my-canvas{
     border-radius: 10px;
@@ -55,7 +56,8 @@ color: white;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 70%;
+    /* transform: translateX(-9%); */
     padding: 20px;
     background-color: whitesmoke;
     border-radius: 10px;
@@ -195,13 +197,16 @@ color: white;
        justify-content: center;
        gap:30px
     }
+    .back{
+        top:-19px;
+    }
     .canvas-container{
-        margin-inline-start:5%;
+        margin-inline-start: 9%;
         max-width: 50%;
     }
     .canvas-options{
         flex-basis: 50%;
-        margin: 0 1%;
+        margin-inline-end: 5%;
     }
     .save-share{
 display: flex;
