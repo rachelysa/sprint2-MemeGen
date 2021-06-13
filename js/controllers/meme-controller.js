@@ -11,8 +11,8 @@ function initMeme(idX, width, height, src) {
     gCanvas = document.getElementById('my-canvas')
     gCtx = gCanvas.getContext('2d');
     posY = 50;
-    if (width === 0) width = 250;
-    if (height === 0) height = 250
+    // if (width === 0) width = 250;
+    // if (height === 0) height = 250
     gCurrImg = (idX) ? getImgById(parseInt(idX)) : { id: 0, url: src, keywords: [] };
 
     var elCanvas = document.querySelector('.main-meme');
@@ -26,6 +26,7 @@ function initMeme(idX, width, height, src) {
     drawImg(gCurrImg.url);
     renderFeachures();
     addListeners();
+    // window.addEventListener('resize',resizeCanvas1);
 
 }
 
@@ -54,7 +55,7 @@ function goBackToGallery() {
     var elCanvas = document.querySelector('.main-meme');
     elCanvas.classList.toggle('show');
     var elGalery = document.querySelector('.galery-container');
-    elGalery.style.display = 'flex';
+    elGalery.style.display = 'grid';
 
     var elSearch = document.querySelector('.search-kind')
     elSearch.style.opacity = 1;

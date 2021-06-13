@@ -6,7 +6,7 @@ body{
     background-color: rgb(231, 231, 231);
     background-image: url('../img/back.jpg');
     background-size: cover;
-    width:100vw;
+
     height: 100vh;;
 }
 body.rtl {
@@ -53,7 +53,7 @@ body.rtl .lang-select {
       display: block;
       width: 250px;
       margin-inline-start: 20px;
-     margin-top: 20px;
+      margin-top: 13px;
 
   }
 
@@ -162,9 +162,10 @@ body.rtl .lang-select {
     width: 200px;
     text-align: center;
     position: absolute;
-    top: 30px;
+    top: 100px;
     right: 50%;
-    transform: translateX(100%);
+    transform: translateX(50%);
+    border-radius: 5px;
   background-color: coral;
   border: none;
   border-bottom: white 1px solid;
@@ -183,6 +184,16 @@ body.rtl .lang-select {
   
   .menu-open .nav-links {
     transform: translateX(0);
+  }
+  @media (min-width:570px){
+    .lang-select{
+      position: absolute;
+      top: 30px;
+      right: 50%;
+      transform: translateX(100%);
+      background-color: coral;
+      border-radius: 0px;
+    }
   }
 
 

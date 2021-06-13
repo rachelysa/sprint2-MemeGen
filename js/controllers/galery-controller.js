@@ -1,13 +1,15 @@
 'use strict'
 var gMemes;
 function initGalery() {
+    
     createImgs();
+    createImgsGrid()
     renderGalery();
     renderSearch();
     doTrans()
     gMemes = loadFromStorage('memes');
     if (!gMemes) gMemes = [];
-
+   
 
 }
 function initMemes() {
@@ -24,10 +26,12 @@ function initMemes() {
     elGalery.innerHTML = strHtml;
 }
 function renderGalery(imgs = getImgs()) {
-    var strHtml = '<div  ><input type="file" title="" class=" upload" name="image" onchange="onImgInput(event)" /><div class="upload-style"data-trans="your-upload"></div></div>';
+    var strHtml = '<div  ><input type="file" title="" class=" upload small" name="image" onchange="onImgInput(event)" /><div class="upload-style"data-trans="your-upload"></div></div>';
 
     imgs.forEach(img => {
-        strHtml += `<div data-id="${img.id}"class="img-container" onclick="openMeme(this)"><img src="${img.url}" alt="" srcset="" class="galery-img" ></div>`
+        // strHtml += `<div data-id="${img.id}"class="img-container ${img.classToAdd}" onclick="openMeme(this)">
+   strHtml+=   `   <img src="${img.url}" alt="" srcset="" class="galery-img  ${img.classToAdd}"  onclick="openMeme(this)" >`
+        {/* </div>` */}
     })
       var elGalery = document.querySelector('.galery-container');
     elGalery.innerHTML = strHtml;

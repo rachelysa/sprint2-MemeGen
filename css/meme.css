@@ -8,7 +8,9 @@ position: absolute;
     opacity: 0;
     pointer-events: none;
     transition: 1s;
-
+    padding-top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .show{
@@ -20,7 +22,7 @@ position: absolute;
     position: absolute;
     width: 200px;
     height: 40px;
-    top:-45px;
+    top:-19px;
     margin-bottom: 10px;
     background-color: transparent;
     font-size: 16px;
@@ -41,18 +43,22 @@ color: white;
 .canvas-container{
 
     margin: 0 auto;
-    margin-bottom: 10px;
+    max-width: 90%;
 
-    /* border: 1px solid rgb(0, 0, 0); */
 }
-
+#my-canvas{
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+}
 .canvas-options{
-     margin: 0 10%;
-     display: flex;
+    margin: 0 auto;
+    display: flex;
     flex-direction: column;
-   padding: 20px;
-   background-color: white;
-   border-radius: 10px;
+    width: 100%;
+    padding: 20px;
+    background-color: whitesmoke;
+    border-radius: 10px;
  
 }
 
@@ -191,6 +197,7 @@ color: white;
     }
     .canvas-container{
         margin-inline-start:5%;
+        max-width: 50%;
     }
     .canvas-options{
         flex-basis: 50%;

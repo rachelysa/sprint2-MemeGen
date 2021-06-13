@@ -1,10 +1,13 @@
 .galery-img{
 
     width:300px;
-    object-fit: contain;
+    /* object-fit: contain; */
     border-radius: 20px;
     vertical-align: middle;
     transition: 0.2s;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
     
  
 }
@@ -33,8 +36,8 @@
 
 }
 .upload-style{
-    width:300px;
-    height: 155px;
+    width:100%;
+    height: 170px;
     margin-bottom: 10px;
     background-color: coral;
     font-size: 19px;
@@ -48,30 +51,52 @@
     transition: 0.5s;
 }
 
-.img-container img:hover{
+.galery-img:hover{
 
  opacity: 0.7;
 }
 
 .galery-container{
  
-    display: flex;
+    /* display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-    height:calc(100vw *0.7);
+  height: 250%; */
     /* height: calc( var(--windowHeight) / 2 ); */
-	 width: 100vw; 
+	 /* max-width: 100vw;  */
 
-    gap:10px;
-    margin: 20px;
+    /* gap:10px;
+  
 
-    justify-content: stretch;
-    align-items: stretch;
+ 
     opacity: 1;
-    transition:1s ;
+    transition:1s ; */ 
  
-   
+     margin: auto;
+    display: grid;
+      justify-content : stretch;
+    /* align-items: stretch; */
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    
+    padding:0 30px 20px;
+      grid-auto-rows: auto;
+      grid-auto-flow: dense;
+      gap: 20px;
  
+}
+.small{
+  grid-row: span 3;
+grid-column: span 1;
+}
+.same{
+  grid-row: span 4;
+  grid-column: span 1;
+
+}
+.large{
+  grid-row: span 5;
+  grid-column: span 1;
+
 }
 @media screen and (max-width: 500px) {
   .galery-container{
@@ -100,16 +125,25 @@
     /* border-bottom: 2px solid coral; */
     transition: 1s;
 }
+.search-input:focus { 
+  outline: none;
+  border-color: coral;
+  box-shadow: 0 0 10px coral;
+}
 .search-kind{
     display: flex;
     gap: 20px;
     justify-content: center;
   flex-direction: column;
   background-color: rgb(245, 245, 245);
-  border-bottom: 2px solid coral;
+  border-radius: 10px;
+  /* border-bottom: 3px solid coral; */
+  box-shadow: 0px 5px 10px coral;
   align-items: center;
-  margin: 10px;
+ 
   padding: 20px;
+  margin-bottom: 20px;
+
 }
 
   .search{
@@ -132,7 +166,12 @@
 @media (min-width:1200px){
     .search-kind{
         flex-direction: row;
+        max-width: 1344px;
+    margin: 0 auto 30px;
+
     }
-  
+  .galery-container{
+    max-width: 1400px;
+  }
 
 }

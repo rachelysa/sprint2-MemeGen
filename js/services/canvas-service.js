@@ -45,6 +45,15 @@ function drawText() {
 
 }
 
+function resizeCanvas1() {
+    var elContainer = document.querySelector('.canvas-container');
+    console.dir(elContainer)
+    // Note: changing the canvas dimension this way clears the canvas
+    gCanvas.width = elContainer.offsetWidth
+    gCanvas.height = elContainer.offsetHeight;
+    drawImg(gCurrImg.url);
+}
+
 function drawImg(src) {
     var img = new Image()
     img.src = src;
