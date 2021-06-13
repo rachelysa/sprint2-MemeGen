@@ -16,7 +16,7 @@ function initMeme(idX, width, height, src) {
     gCurrImg = (idX) ? getImgById(parseInt(idX)) : { id: 0, url: src, keywords: [] };
 
     var elCanvas = document.querySelector('.main-meme');
-    elCanvas.classList.toggle('show')
+    elCanvas.style.display='flex'
     createMeme(gCurrImg.id);
     gCurrMeme = getMeme();
 
@@ -53,7 +53,7 @@ function addListeners() {
 
 function goBackToGallery() {
     var elCanvas = document.querySelector('.main-meme');
-    elCanvas.classList.toggle('show');
+    elCanvas.style.display='none';
     var elGalery = document.querySelector('.galery-container');
     elGalery.style.display = 'grid';
 

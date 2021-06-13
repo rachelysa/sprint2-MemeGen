@@ -1,15 +1,17 @@
 
 /*main*/
 .main-meme{
-/* position: absolute; */
-    display: flex;
+/* position: fixed; */
+    /* display: flex; */
+    
     flex-direction: column;
     justify-content: center;
-    opacity: 0;
-    pointer-events: none;
+    /* opacity: 0; */
+    /* pointer-events: none; */
     transition: 1s;
     padding-top: 30px;
     left: 50%;
+    display: none;
     /* transform: translateX(-50%); */
 }
 
